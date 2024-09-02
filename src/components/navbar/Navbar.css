@@ -1,0 +1,67 @@
+/* בסיסי */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    position: fixed;
+    /* מצמיד את ה-navbar לחלק העליון */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* מוודא שה-navbar יישאר מעל תוכן אחר */
+}
+
+.navbar-logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* רספונסיבי */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .navbar-links.open {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+}
+
+/* מוסיף שוליים לתוכן מתחת ל-navbar */
+body {
+    margin-top: 60px;
+    /* גובה ה-navbar */
+}
